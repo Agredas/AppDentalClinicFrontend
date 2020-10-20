@@ -7,7 +7,8 @@ class Home extends Component {
   render(){
     return (
       <div>
-        Home Page
+        <button className="registerButton" onClick>Register</button>
+        <button className="loginButton" onClick>Log In</button>
       </div>
     )
   }
