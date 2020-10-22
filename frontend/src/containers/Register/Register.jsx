@@ -1,7 +1,7 @@
-import './Register.scss'
 import React from 'react';
 import { Form, Input, Button, notification } from 'antd';
 import axios from 'axios';
+
 const layout = {
     labelCol: {
         span: 8,
@@ -19,8 +19,8 @@ const tailLayout = {
 
 const Register = () =>{
 
-  const onFinish = (user) => {
-    axios.post('http://localhost:3001/users/register', user)
+  const onFinish = (client) => {
+    axios.post('http://localhost:3001/client/register', client)
         .then(res => {
             console.log(res.data)
             notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
@@ -76,7 +76,7 @@ const Register = () =>{
                       },
                   ]}
               >
-                  <Input.Password />
+                  <Input />
               </Form.Item>
               <Form.Item
                   label="Email"
