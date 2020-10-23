@@ -7,6 +7,7 @@ import {notification} from 'antd'
 const Login = ({setClient}) => {
   const history = useHistory();
   const handleSubmit = event =>{
+    console.log('hola')
     event.preventDefault(); // to prevent refreshing the page
     const client ={
         email:event.target.email.value,
@@ -14,7 +15,8 @@ const Login = ({setClient}) => {
     };
     axios.post(process.env.REACT_APP_BASE_URL+'/client/login', client)
     .then(res=>{
-        setClient(res.data.client) 
+        setClient(res.data.client)
+        console.log('hola')
         localStorage.setItem('authToken',res.data.token);
         localStorage.setItem('client',JSON.stringify(res.data.client))
         notification.success({message:'Welcome!',description:'Welcome! '+client.email})
