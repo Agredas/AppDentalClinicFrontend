@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useHistory} from "react-router";
+
 import { Form, Input, Button, notification } from 'antd';
 import axios from 'axios';
 
@@ -7,40 +9,50 @@ const layout = {
         span: 8,
     },
     wrapperCol: {
-        span: 16,
+        span: 7,
     },
 };
 const tailLayout = {
     wrapperCol: {
-        offset: 8,
-        span: 16,
+        offset: 11,
+        span: 8,
     },
 };
 
+
 const Register = () =>{
 
-  const onFinish = (client) => {
-    axios.post('http://localhost:3001/client/register', client)
+    const history = useHistory();
+
+    const handleSubmit = event =>{
+        event.preventDefault(); // Prevent the page from refreshing.
+        const clientBody={
+            name: event.target.name.value,
+            surnames: event.target.surnames.value,
+            phone: event.target.phone.value,
+            email: event.target.email.value,
+            password: event.target.password.value
+        };
+        axios.post('http://localhost:3001/client/register', clientBody)
         .then(res => {
             console.log(res.data)
             notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
+            
+            setTimeout(() => {
+                history.push("/")
+            }, 1500);
         }).catch(error => {
             notification.error({ message: 'Registration error.', description: 'There was an error trying to register the client.' })
         })
-};
+    }
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
     return (
-      <Form
+      <Form onSubmit={handleSubmit}
               {...layout}
               name="basic"
               initialValues={{
                   remember: true,
               }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
           >
               <Form.Item
                   label="Name"
@@ -88,7 +100,8 @@ const Register = () =>{
                       },
                       {
                         type:'email',
-                        message: 'The field must be an email.',
+                        pattern:/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/,
+                        message: 'Your email must contain @ and finish with .com or .es.',
                     }
                   ]}
               >
@@ -112,11 +125,10 @@ const Register = () =>{
               </Form.Item>
 
               <Form.Item {...tailLayout}>
-                  <Button type="primary" htmlType="submit">
-                      Submit
-          </Button>
+                  <Button>Submit</Button>
               </Form.Item>
           </Form>
+          
     )
 }
 
