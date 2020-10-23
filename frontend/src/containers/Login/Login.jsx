@@ -14,7 +14,7 @@ const Login = ({setClient}) => {
     axios.post('http://localhost:3001/client/login', bodyClient)
     .then(res => {
       console.log(res.data.client);
-
+      setClient(res.data.bodyClient)
       localStorage.setItem('authToken', JSON.stringify(res.data.token))
       localStorage.setItem('client', JSON.stringify(res.data.client))
 
