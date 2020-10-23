@@ -2,12 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.scss';
 
-const Header = () => {
+const Header = ({client, setClient}) => {
+
+const logout = () =>{
+    localStorage.removeItem('client');
+    localStorage.removeItem('authToken');
+    setClient(null)
+}
     return (
         <header className="header">
             <Link to="/">Home</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            {user ?
+            <div className='loggedIn'>
+                <Link to='/profile'>{client.email}</Link>
+                <span className='logout' onClick={logout}>Logout</span>
+            </div> :
+            <div className='notLoggedIn'>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+            </div>}
         </header>
     )
 }
