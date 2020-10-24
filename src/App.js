@@ -13,22 +13,21 @@ import Login from './containers/Login/Login';
 import Logout from './containers/Logout/Logout';
 import axios from 'axios';
 
-
-
+// Que componente carga primero ?
 function App() {
 
   const [client, setClient] = useState(JSON.parse(localStorage.getItem('client')));
-  useEffect(() =>{
-    const token = localStorage.getItem('authToken')
-    axios.get(process.env.REACT_APP_BASE_URL + '/client/',{
-      headers:{
-        Authorization: token
-      }
-    })
-    .then(res => {
-      setClient(res.data)
-    })
-  }, [])
+ // useEffect(() =>{
+ //   const token = localStorage.getItem('authToken')
+ //   axios.get(process.env.REACT_APP_BASE_URL + '/client/',{
+ //     headers:{
+ //       Authorization: token
+ //     }
+ //   })
+ //   .then(res => {
+ //     setClient(res.data)
+ //   })
+ // }, [])
   return (
     <BrowserRouter>
       <Header client={client} setClient={setClient}/>
