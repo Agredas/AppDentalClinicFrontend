@@ -18,7 +18,7 @@ const Login = ({setClient}) => {
         setClient(res.data.client)
         console.log('hola')
         localStorage.setItem('authToken',res.data.token);
-        localStorage.setItem('client',JSON.stringify(res.data.client))
+        localStorage.setItem('client',JSON.stringify(res.data))
         notification.success({message:'Welcome!',description:'Welcome! '+client.email})
         setTimeout(() => {
             history.push('/')
