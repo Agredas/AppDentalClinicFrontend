@@ -1,15 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-class Home extends Component {
-    render(){
+import './Home.scss';
+
+const Home = () =>{
         return (
-            <div>
-                Página Home
-            </div>
+        <div className='home'>
+          <div className='header'>
+              <div className='logo'></div>
+          </div>
+          <div className='buttons'>
+              <Link to='/register'>Register</Link>
+              <div className='hole1'></div>
+              <Link to='/login'>Login</Link>
+          </div>
+          <div className='footer'>
+            <div className='nameApp'>Dental Clinic App</div>
+            <div className='hole2'></div>
+            <div className='creator'>©Andrea Ágredas</div>
+          </div>
+        </div>
         )
-    }
-    
-}
+}  
+
 export default Home;
 
 /* import React from 'react'
