@@ -9,6 +9,7 @@ const Register = () =>{
     const history = useHistory();
 
     const handleSubmit = event =>{
+        console.log('hola')
         event.preventDefault(); // Prevent the page from refreshing.
         const clientBody={
             name: event.target.name.value,
@@ -26,12 +27,13 @@ const Register = () =>{
                 history.push("/")
             }, 1500);
         }).catch(error => {
+            console.log(error)
             notification.error({ message: 'Registration error.', description: 'There was an error trying to register the client.' })
         })
     }
 
     return (
-        <form className="register-form" onSubmit={handleSubmit}>
+        <form className="register-form" onSubmit={ handleSubmit}>
 
         <Input type="name" name="name" required placeholder="Write your name" />
         <Input type="surnames" name="surnames" required placeholder="Write your surnames" />
