@@ -14,10 +14,11 @@ const Home = () =>{
               <div className='hole1'></div>
               <Link to='/login'>Login</Link>
           </div>
+          <div className='phrase'>☺ We want to make you smile ☺</div>
           <div className='footer'>
-            <div className='nameApp'>Dental Clinic App</div>
+            <div>Dental Clinic App</div>
             <div className='hole2'></div>
-            <div className='creator'>©Andrea Ágredas</div>
+            <div>©Andrea Ágredas</div>
           </div>
         </div>
         )
