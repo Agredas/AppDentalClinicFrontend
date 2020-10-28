@@ -21,10 +21,6 @@
   input {
       @include reset-input-button(rgb(200, 255, 241), rgb(152, 252, 255));
   }
-  button {
-      @include reset-input-button(rgb(18, 247, 255), rgb(0, 197, 204));
-      cursor: pointer;
-  }
    ::placeholder {
       color: black;
   }

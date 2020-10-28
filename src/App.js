@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Login from './containers/Login/Login';
+import Profile from './containers/Profile/Profile';
 import axios from 'axios';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/login'  exact>
           <Login setClient={setClient}/>
           </Route>
+          <Route path='/profile' component={Profile} exact/>
       </Switch>
     </BrowserRouter>
   );
