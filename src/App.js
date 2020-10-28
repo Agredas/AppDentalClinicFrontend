@@ -36,9 +36,11 @@ function App() {
           <Route path='/' component={Home} exact/>
           <Route path='/register' component={Register} exact/>
           <Route path='/login'  exact>
-          <Login setClient={setClient}/>
+            <Login setClient={setClient}/>
           </Route>
-          <Route path='/profile' component={Profile} exact/>
+          <Route path='/profile' exact>
+            <Profile setClient={setClient}/>
+          </Route>
       </Switch>
     </BrowserRouter>
   );
