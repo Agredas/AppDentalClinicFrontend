@@ -39,8 +39,8 @@ const Profile = ({setClient}) =>{
               <Link to='/create'>Create Appointment</Link>
           </div>
           <div className='logout'>
-            <div className='logout-button'>
-              <button onClick={logout}>Logout</button>
+            <div>
+              <button className='logout-button' onClick={logout}>Logout</button>
             </div>
           </div>
           <div className='footer'>

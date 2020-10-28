@@ -21,8 +21,8 @@
 .icon{
   background-image: url(../../images/usericon.png);
   background-size: contain;
-  width: 20em;
-  height: 20em;
+  width: 15em;
+  height: 15em;
 }
 
 .buttons{
@@ -40,10 +40,11 @@
 }
 
 .logout-button{
+  border: none;
   display: flex;
   justify-content: center;
   font-size: 1.5em;
-  a{color:  #11537A;
+  color:  #11537A;
   background-color:#a5c4c7;
   cursor: pointer;
   border-radius: 0.6em;
@@ -51,5 +52,5 @@
   &:hover{
   background-color: #11537A;
   color: #3EB6C2;
-}}
+}
 }
