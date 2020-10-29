@@ -6,6 +6,8 @@ import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Login from './containers/Login/Login';
 import Profile from './containers/Profile/Profile';
+import Create from './containers/Create/Create';
+import Appointments from './containers/Appointments/Appointments';
 import axios from 'axios';
 
 function App() {
@@ -16,20 +18,7 @@ function App() {
     console.error(error)
   }
   const [client, setClient] = useState(initialClient);
- useEffect(() =>{
-   const token = localStorage.getItem('authToken')
-   if(token){
-    axios.get(process.env.REACT_APP_BASE_URL + '/client',{
-      headers:{
-        Authorization: token
-      }
-    })
-    .then(res => {
-      setClient(res.data)
-    }).catch(err => console.log)
-   }
-   
- }, [])
+ 
   return (
     <BrowserRouter>
       <Switch>
@@ -41,6 +30,8 @@ function App() {
           <Route path='/profile' exact>
             <Profile setClient={setClient}/>
           </Route>
+          <Route path='/create' component={Create} exact/>
+          <Route path='/appointments' component={Appointments} exact/>
       </Switch>
     </BrowserRouter>
   );
