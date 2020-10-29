@@ -34,7 +34,7 @@ const Profile = ({setClient}) =>{
               <div className='icon'></div>
           </div>
           <div className='buttons'>
-              <Link to='/show'>View Appointments</Link>
+              <Link to='/appointments'>Show Appointments</Link>
               <div className='hole1'></div>
               <Link to='/create'>Create Appointment</Link>
           </div>

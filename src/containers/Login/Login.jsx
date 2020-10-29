@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import './Login.scss';
 import {useHistory} from 'react-router';
-import {Link} from 'react-router-dom';
 import {notification} from 'antd';
 
 const Login = ({setClient}) => {

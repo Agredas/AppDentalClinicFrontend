@@ -9,7 +9,6 @@ const Register = () =>{
     const history = useHistory();
 
     const handleSubmit = event =>{
-        console.log('hola')
         event.preventDefault(); // Prevent the page from refreshing.
         const clientBody={
             name: event.target.name.value,
@@ -21,7 +20,7 @@ const Register = () =>{
         axios.post('http://localhost:3001/client/register', clientBody)
         .then(res => {
             console.log(res.data)
-            notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
+            notification.success({ message :'Succesfully registered client.',description:'Succesfully registered client.'})
             
             setTimeout(() => {
                 history.push("/")
@@ -33,7 +32,7 @@ const Register = () =>{
     }
 
     return (
-        <form className="register-form" onSubmit={ handleSubmit}>
+        <form className="register-form" onSubmit={handleSubmit}>
 
         <Input type="name" name="name" required placeholder="Write your name" />
         <Input type="surnames" name="surnames" required placeholder="Write your surnames" />
