@@ -30,7 +30,7 @@ const Login = ({setClient}) => {
 }
   return (
     
-    <form className='login-form' onSubmit={ handleSubmit}>
+    <form className='login-form' onSubmit={handleSubmit}>
 
       <input type='email' name='email' required placeholder='Write your email'/>
       <input type="password" name="password" required placeholder="Introduce tu contraseña"/>

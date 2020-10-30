@@ -16,10 +16,17 @@ const Appointments = () =>{
     })
   },[])
 
+  const deleteAppointment = async (id) =>{
+    const options = { headers: { Authorization: `Bearer ${token}` }};
+    await axios.delete('http://localhost:3001/appointment/cancel/' + id, options)
+
+  }
+
+
   return (
         <div className="appointmentContainer">
             {appointments?.map(appointment =>
-                <div className="cardAppointment">{appointment.title}
+                <div className="cardAppointment">{appointment.title}<button onClick={()=> {deleteAppointment(appointment._id)}}>X</button>
                 </div>
             )}
         </div>

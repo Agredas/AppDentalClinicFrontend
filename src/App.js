@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { Switch, BrowserRouter, Route} from 'react-router-dom'
 import './App.scss';
 import 'antd/dist/antd.css';
@@ -8,7 +8,6 @@ import Login from './containers/Login/Login';
 import Profile from './containers/Profile/Profile';
 import Create from './containers/Create/Create';
 import Appointments from './containers/Appointments/Appointments';
-import axios from 'axios';
 
 function App() {
   let initialClient = null;
