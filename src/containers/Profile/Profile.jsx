@@ -15,7 +15,7 @@ const Profile = ({setClient}) =>{
         headers: {Authorization: `Bearer ${token}`}
       }
       console.log(token)
-      await axios.post(process.env.REACT_APP_BASE_URL+'/client/logout',{}, options)
+      await axios.post('https://app-dental-clinic-backend.herokuapp.com/client/logout',{}, options)
       localStorage.removeItem('client')
       localStorage.removeItem('authToken')
       setClient(null)

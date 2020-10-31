@@ -7,14 +7,13 @@ import {notification} from 'antd';
 const Login = ({setClient}) => {
   const history = useHistory();
   const handleSubmit = event =>{
-    console.log('entramos en handlesubmit')
     event.preventDefault(); // to prevent refreshing the page
     const client ={
         email:event.target.email.value,
         password:event.target.password.value
     };
     console.log(client)
-    axios.post(process.env.REACT_APP_BASE_URL+'/client/login', client)
+    axios.post('https://app-dental-clinic-backend.herokuapp.com/client/login', client)
     .then(res=>{
         console.log('axios done')
         localStorage.setItem('authToken',res.data.token);

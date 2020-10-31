@@ -9,7 +9,7 @@ const AdminProfile = ({client, setClient}) =>{
   const [appointments,setAppointments] = useState([]);
   useEffect(()=>{
     const options = { headers: { Authorization: `Bearer ${client.token}` }};
-    axios.get('http://localhost:3001/appointment/showAll', options)
+    axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/showAll', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data);
@@ -23,7 +23,7 @@ const AdminProfile = ({client, setClient}) =>{
       const options = {
         headers: {Authorization: `Bearer ${token}`}
       }
-      await axios.post(process.env.REACT_APP_BASE_URL+'/client/logout',{}, options)
+      await axios.post('https://app-dental-clinic-backend.herokuapp.com/client/logout',{}, options)
       localStorage.removeItem('client')
       localStorage.removeItem('authToken')
       setClient(null)

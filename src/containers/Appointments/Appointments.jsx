@@ -2,16 +2,14 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import './Appointments.scss';
 import {notification} from 'antd';
-import {useHistory} from 'react-router';
 import {Link} from 'react-router-dom';
 
 const Appointments = () =>{
-  const history = useHistory();
   const [appointments,setAppointments] = useState([]);
   const token = localStorage.getItem('authToken')
   useEffect(()=>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
-    axios.get('http://localhost:3001/appointment/show', options)
+    axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data.appointment);
@@ -24,9 +22,9 @@ const Appointments = () =>{
 
   const deleteAppointment = async (id) =>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
-    await axios.delete('http://localhost:3001/appointment/cancel/' + id, options)
+    await axios.delete('https://app-dental-clinic-backend.herokuapp.com/appointment/cancel/' + id, options)
     notification.success({message:'Appointment has been successfully cancelled.', description:'Appointment has been successfully cancelled.'})
-    await axios.get('http://localhost:3001/appointment/show', options)
+    await axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data.appointment);
@@ -38,7 +36,11 @@ const Appointments = () =>{
       <div className='appointmentprofile'>
         <div className="appointmentContainer">
             {appointments?.map(appointment =>
-                <div key={appointment._id} className="cardAppointment">{appointment.title}<button onClick={()=> {deleteAppointment(appointment._id)}}>X</button>
+                <div key={appointment._id} className="cardAppointment">
+                  <div className='title'>{appointment.title}</div>
+                  <div className='title'>{appointment.description}</div>
+                  <div>{appointment.date}</div>
+                  <button onClick={()=> {deleteAppointment(appointment._id)}}>X</button>
                 </div>
             )}
         </div>

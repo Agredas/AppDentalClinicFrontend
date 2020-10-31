@@ -17,7 +17,7 @@ const Register = () =>{
             email: event.target.email.value,
             password: event.target.password.value
         };
-        axios.post('http://localhost:3001/client/register', clientBody)
+        axios.post('https://app-dental-clinic-backend.herokuapp.com/client/register', clientBody)
         .then(res => {
             console.log(res.data)
             notification.success({ message :'Succesfully registered client.',description:'Succesfully registered client.'})

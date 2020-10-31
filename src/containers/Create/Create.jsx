@@ -14,10 +14,9 @@ const Create = () =>{
       const appointmentBody={
         title: event.target.title.value,
         description: event.target.description.value,
-        date: event.target.date.value,
-        status: event.target.status.value
+        date: event.target.date.value
       };
-      axios.post('http://localhost:3001/appointment/create', appointmentBody, headers)
+      axios.post('https://app-dental-clinic-backend.herokuapp.com/appointment/create', appointmentBody, headers)
       .then(res=> {
         console.log(res.data)
         notification.success({message: 'Succesfully appointment created.', description: 'Succesfully appointment created.'})
