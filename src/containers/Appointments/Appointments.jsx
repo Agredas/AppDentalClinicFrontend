@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Appointments.scss';
 import {notification} from 'antd';
 import {useHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 
 const Appointments = () =>{
   const history = useHistory();
@@ -19,6 +20,8 @@ const Appointments = () =>{
     })
   },[])
 
+  
+
   const deleteAppointment = async (id) =>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
     await axios.delete('http://localhost:3001/appointment/cancel/' + id, options)
@@ -32,12 +35,15 @@ const Appointments = () =>{
     })
   }
   return (
+      <div className='appointmentprofile'>
         <div className="appointmentContainer">
             {appointments?.map(appointment =>
                 <div key={appointment._id} className="cardAppointment">{appointment.title}<button onClick={()=> {deleteAppointment(appointment._id)}}>X</button>
                 </div>
             )}
         </div>
+        <div className='backbutton'><Link to='/profile'>Back</Link></div>
+      </div>
 );
 
 }

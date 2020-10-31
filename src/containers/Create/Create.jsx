@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Create.scss';
 import {Input, Button, notification} from 'antd';
 import {useHistory} from "react-router";
+import {Link} from 'react-router-dom';
 
 const Create = () =>{
   const history = useHistory();
@@ -30,6 +31,7 @@ const Create = () =>{
       })
   }
   return (
+    <div>
     <form className="create-form" onSubmit={handleSubmit}>
 
     <Input type="title" name="title" required placeholder="Write title" />
@@ -40,6 +42,8 @@ const Create = () =>{
     <Button type="primary" htmlType="submit">Create</Button>
 
 </form>
+<div className='backbutton'><Link to='/profile'>Back</Link></div>
+</div>
 )
 }
 

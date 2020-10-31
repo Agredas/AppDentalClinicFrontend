@@ -16,14 +16,13 @@ const Profile = ({setClient}) =>{
       }
       console.log(token)
       await axios.post(process.env.REACT_APP_BASE_URL+'/client/logout',{}, options)
-      console.log('hola2')
       localStorage.removeItem('client')
       localStorage.removeItem('authToken')
       setClient(null)
       notification.success({message:'Hope to see you soon!',description:'Hope to see you soon!'})
-        setTimeout(() => {
+         setTimeout(() => {
             history.push('/')
-        }, 1000);
+        }, 1000); 
     }catch (error) {
       console.log(error);
   }
