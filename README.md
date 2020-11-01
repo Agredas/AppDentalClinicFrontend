@@ -26,10 +26,10 @@ AppDentalClinic is an application for a Dental Clinic where clients can register
 
 Clients can register and make appointments, cancel them or view them all.
 
-![](img/ClientFunctions.gif)
+![](video/ClientFunctions.gif)
 
 ## Functions as Administrator 🚀
 
 Administrator can login and view all appointments of all clients.
 
-![](img/AdminFunctions.gif)
+![](video/AdminFunctions.gif)
