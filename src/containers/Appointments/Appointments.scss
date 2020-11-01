@@ -1,27 +1,86 @@
+.appointmentprofile{
+  display: flex;
+  flex-direction: column;
+  color: #84a9ac;
+  height: 100vh;
+  width: 100vw;
+}
+
 .appointmentContainer {
-  margin-top: 15vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
+  align-items: center;
 
-  .cardAppointment {
+  .infoAppointment {
       font-size: calc(2vw -1vh);
       padding: 2vh;
       width: calc(20vw -10vh);
       height: calc(10vw -5vh);
       border-radius: 1em;
       margin: 2em;
-      background-color: rgba(72, 194, 255, 0.5);
+      background-color: #a5c4c7;
       text-align: center;
       display: flex;
       flex-direction: column;
       vertical-align: middle
   }
+  .inside{
+    background-color: #a5c4c7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    color:  #11537A;
+  }
 
-  .cardAppointment:hover {
-      background-color: tomato;
-      color: white;
+  .buttondelete{
+    display: flex;
+    justify-content: center;
+    background-color: #a5c4c7;
+    margin-top: 0.5em;
+
+
+    
+    .deleteButton{
+    cursor: pointer;
+    box-shadow:inset 0px 39px 0px -24px #e67a73;
+	  background-color:#e4685d;
+	  border-radius:4px;
+	  border:1px solid #ffffff;
+	  display:inline-block;
+	  color:#ffffff;
+	  -family:Arial;
+	  font-size:15px;
+	  padding:6px 15px;
+	  text-decoration:none;
+	  text-shadow:0px 1px 0px #b23e35;
+    }
+  }
+
+}
+
+.justifybutton{
+  display: flex;
+  justify-content: center;
+}
+
+.backbutton{
+  width: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  border: none;
+  color: #11537A;
+  background-color:#a5c4c7;
+  cursor: pointer;
+  border-radius: 0.6em;
+  padding: 0.3em;
+  &:hover{
+    background-color: #11537A;
+    color: #3EB6C2;
   }
 }

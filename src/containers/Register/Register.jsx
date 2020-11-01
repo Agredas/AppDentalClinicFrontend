@@ -1,7 +1,8 @@
 import React from 'react';
 import {useHistory} from "react-router";
-
-import {Input, Button, notification } from 'antd';
+import './Register.scss';
+import {Link} from 'react-router-dom';
+import {Input, notification } from 'antd';
 import axios from 'axios';
 
 const Register = () =>{
@@ -32,17 +33,25 @@ const Register = () =>{
     }
 
     return (
+    <div className="register">
+        <div className="headerIcon">
+            <div className="iconTrust"></div>
+        </div>
+        <div className="headerRegister">
+            <div className="buttonRegister">
+                <Link to='/' className='linkBack'>Back</Link>
+            </div>
+        </div>
         <form className="register-form" onSubmit={handleSubmit}>
-
         <Input type="name" name="name" required placeholder="Write your name" />
         <Input type="surnames" name="surnames" required placeholder="Write your surnames" />
         <Input type="phone" name="phone" required placeholder="Write your phone" />
         <Input type="email" name="email" required placeholder="Write your email" />
         <Input type="password" name="password" required placeholder="Write your password" />
-
-        <Button type="primary" htmlType="submit">Sign up</Button>
-
-    </form>
+        <button className='buttonRegister' type="primary" htmlType="submit">Sign up</ button>
+        </form>
+        <div className="phrase3">Thank you for trusting us</div>
+    </div>
 )
 }
 

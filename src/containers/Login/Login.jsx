@@ -2,7 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './Login.scss';
 import {useHistory} from 'react-router';
-import {notification} from 'antd';
+import {Input, notification} from 'antd';
+import {Link} from 'react-router-dom';
+
 
 const Login = ({setClient}) => {
   const history = useHistory();
@@ -29,15 +31,21 @@ const Login = ({setClient}) => {
     .catch(error=> {throw (error)})
 }
   return (
-    
-    <form className='login-form' onSubmit={handleSubmit}>
-
-      <input type='email' name='email' required placeholder='Write your email'/>
-      <input type="password" name="password" required placeholder="Introduce tu contraseña"/>
-      
-        <button type="submit">Login</button>
-
+    <div className='login'>
+      <div className='headerIcon'>
+        <div className='iconWelcome'></div>
+      </div>
+      <div className='headerLogin'>
+        <div className='buttonLogin'>
+        <Link to='/' className='linkBack'>Back</Link></div>
+      </div>
+      <form className='login-form' onSubmit={handleSubmit}>
+        <Input type='email' name='email' required placeholder='Write your email'/>
+        <Input type="password" name="password" required placeholder="Write your password"/>
+        <button className='buttonLogin' type="submit">Login</button>
     </form>
+    <div className='phrase2'>Thanks for coming back</div>
+    </div>
   )
 }
 

@@ -36,13 +36,16 @@ const AdminProfile = ({client, setClient}) =>{
   }
   }
         return (
-      <div>
-        <div className="appointmentContainer">
+      <div className='appointmentprofile'>
+        <div className='appointmentContainer'>
           {appointments?.map(appointment =>
-              <div key={appointment._id} className="cardAppointment">{appointment.title}
-        </div>)}
+              <div key={appointment._id} className='infoAppointment'>
+              <div className='inside'>{appointment.title}</div>
+              <div className='inside'>{appointment.description}</div>
+              <div className='inside'>{appointment.date}</div>
+            </div>)}
         </div>
-        <div>
+        <div className="justifybutton">
         <button className='logout-button' onClick={logout}>Logout</button>
         </div>
       </div>

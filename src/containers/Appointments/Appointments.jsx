@@ -34,17 +34,20 @@ const Appointments = () =>{
   }
   return (
       <div className='appointmentprofile'>
-        <div className="appointmentContainer">
+        <div className='appointmentContainer'>
             {appointments?.map(appointment =>
-                <div key={appointment._id} className="cardAppointment">
-                  <div className='title'>{appointment.title}</div>
-                  <div className='title'>{appointment.description}</div>
-                  <div>{appointment.date}</div>
-                  <button onClick={()=> {deleteAppointment(appointment._id)}}>X</button>
+                <div key={appointment._id} className='infoAppointment'>
+                  <div className='inside'>{appointment.title}</div>
+                  <div className='inside'>{appointment.description}</div>
+                  <div className='inside'>{appointment.date}</div>
+                  <div className='buttondelete'><button className='deleteButton' onClick={()=> {deleteAppointment(appointment._id)}}>X</button></div>
                 </div>
             )}
         </div>
-        <div className='backbutton'><Link to='/profile'>Back</Link></div>
+        <div className="justifybutton">        
+        <Link to='/profile' className='backbutton'>Back</Link>
+        </div>
+
       </div>
 );
 
