@@ -21,7 +21,7 @@ const Register = () =>{
         axios.post('https://app-dental-clinic-backend.herokuapp.com/client/register', clientBody)
         .then(res => {
             console.log(res.data)
-            notification.success({ message :'Succesfully registered client.',description:'Succesfully registered client.'})
+            notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
             
             setTimeout(() => {
                 history.push("/")

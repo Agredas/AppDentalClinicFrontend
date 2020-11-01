@@ -22,7 +22,7 @@ const Login = ({setClient}) => {
         localStorage.setItem('client',JSON.stringify(res.data))
         setClient(res.data)
         
-        notification.success({message:'Welcome!',description:'Welcome! '+client.email})
+        notification.success({message:'Welcome!',description:'Welcome to our application! '+client.email})
         
         setTimeout(() => {
             history.push('/profile')

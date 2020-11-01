@@ -19,7 +19,7 @@ const Profile = ({setClient}) =>{
       localStorage.removeItem('client')
       localStorage.removeItem('authToken')
       setClient(null)
-      notification.success({message:'Hope to see you soon!',description:'Hope to see you soon!'})
+      notification.success({message:'Goodbye!',description:'Hope to see you soon!'})
          setTimeout(() => {
             history.push('/')
         }, 1000); 

@@ -20,7 +20,7 @@ const Create = () =>{
       axios.post('https://app-dental-clinic-backend.herokuapp.com/appointment/create', appointmentBody, headers)
       .then(res=> {
         console.log(res.data)
-        notification.success({message: 'Succesfully appointment created.', description: 'Succesfully appointment created.'})
+        notification.success({message: 'Appointment created.', description: 'Succesfully appointment created.'})
 
         setTimeout(() => {
           history.push("/appointments")
