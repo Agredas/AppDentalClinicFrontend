@@ -2,7 +2,7 @@
 
 ## Introduction
 
-AppDentalClinic is an application for a Dental Clinic where clients can register and make appointments, cancel them or view them all, you can also be an administrator and see all the appointments of all the users.
+AppDentalClinic is a responsive application for a Dental Clinic where clients can register and make appointments, cancel them or view them all, you can also be an administrator and see all the appointments of all the users.
 
 - Links: 
   - Repository: [GitHub](https://github.com/Agredas/AppDentalClinicFrontend)
