@@ -15,7 +15,7 @@ const Login = ({setClient}) => {
         password:event.target.password.value
     };
     console.log(client)
-    axios.post('https://app-dental-clinic-backend.herokuapp.com/client/login', client)
+    axios.post(process.env.REACT_APP_BASE_URL + '/client/login', client)
     .then(res=>{
         console.log('axios done')
         localStorage.setItem('authToken',res.data.token);

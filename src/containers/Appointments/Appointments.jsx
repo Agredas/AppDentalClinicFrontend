@@ -9,7 +9,7 @@ const Appointments = () =>{
   const token = localStorage.getItem('authToken')
   useEffect(()=>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
-    axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/show', options)
+    axios.get(process.env.REACT_APP_BASE_URL + '/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data.appointment);

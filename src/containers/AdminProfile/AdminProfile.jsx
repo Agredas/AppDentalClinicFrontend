@@ -9,7 +9,7 @@ const AdminProfile = ({client, setClient}) =>{
   const [appointments,setAppointments] = useState([]);
   useEffect(()=>{
     const options = { headers: { Authorization: `Bearer ${client.token}` }};
-    axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/showAll', options)
+    axios.get(process.env.REACT_APP_BASE_URL + '/appointment/showAll', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data);
