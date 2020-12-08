@@ -22,9 +22,9 @@ const Appointments = () =>{
 
   const deleteAppointment = async (id) =>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
-    await axios.delete('https://app-dental-clinic-backend.herokuapp.com/appointment/cancel/' + id, options)
+    await axios.delete(process.env.REACT_APP_BASE_URL + '/appointment/cancel/' + id, options)
     notification.success({message:'Appointment cancelled.', description:'Appointment has been successfully cancelled.'})
-    await axios.get('https://app-dental-clinic-backend.herokuapp.com/appointment/show', options)
+    await axios.get(process.env.REACT_APP_BASE_URL + '/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
       setAppointments(res.data.appointment);
