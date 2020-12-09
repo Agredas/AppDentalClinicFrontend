@@ -6,7 +6,7 @@ function CheckRoles(props) {
 
   const returnViewByRole = (props) => {
     console.log(props.client)
-    if(props.client.rol === 'admin'){
+    if(props.client.role === 'admin'){
       return <AdminProfile client={props.client} setClient={props.setClient}/>
     }else{
       return <Profile client={props.client} setClient={props.setClient}/>
