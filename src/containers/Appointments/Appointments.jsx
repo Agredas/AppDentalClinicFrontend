@@ -25,7 +25,7 @@ const Appointments = () =>{
     await axios.get(process.env.REACT_APP_BASE_URL + '/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
-      setAppointments(res.data.appointment);
+      setAppointments(res.data);
     }).catch((error) =>{
       console.log(error);
     })
@@ -38,7 +38,7 @@ const Appointments = () =>{
                   <div className='inside'>{appointment.title}</div>
                   <div className='inside'>{appointment.description}</div>
                   <div className='inside'>{appointment.date_appointment}</div>
-                  <div className='buttondelete'><button className='deleteButton' onClick={()=> {deleteAppointment(appointment._id)}}>X</button></div>
+                  <div className='buttondelete'><button className='deleteButton' onClick={()=> {deleteAppointment(appointment.id)}}>X</button></div>
                 </div>
             )}
         </div>
