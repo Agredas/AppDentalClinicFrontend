@@ -34,7 +34,7 @@ const Appointments = () =>{
       <div className='appointmentprofile'>
         <div className='appointmentContainer'>
             {appointments?.map(appointment =>
-                <div key={appointment._id} className='infoAppointment'>
+                <div key={appointment.id} className='infoAppointment'>
                   <div className='inside'>{appointment.title}</div>
                   <div className='inside'>{appointment.description}</div>
                   <div className='inside'>{appointment.date_appointment}</div>
