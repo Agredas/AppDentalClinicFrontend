@@ -40,7 +40,6 @@ const Create = () =>{
     <Input type="title" name="title" required placeholder="Write title" />
     <Input type="descriptoin" name="description" required placeholder="Write descritpion" />
     <Input type="date" name="date" required placeholder="Write date" />
-    <Input type="status" name="status" required placeholder="Write status" />
 
     <button  type="primary" className='noStyle' htmlType="submit">Create</button>
 
