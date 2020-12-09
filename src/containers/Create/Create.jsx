@@ -14,7 +14,7 @@ const Create = () =>{
       const appointmentBody={
         title: event.target.title.value,
         description: event.target.description.value,
-        date: event.target.date.value,
+        date_appointment: event.target.date_appointment.value,
       };
       axios.post(process.env.REACT_APP_BASE_URL + '/appointment/create', appointmentBody, headers)
       .then(res=> {

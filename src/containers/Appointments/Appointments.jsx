@@ -39,7 +39,7 @@ const Appointments = () =>{
                 <div key={appointment._id} className='infoAppointment'>
                   <div className='inside'>{appointment.title}</div>
                   <div className='inside'>{appointment.description}</div>
-                  <div className='inside'>{appointment.date}</div>
+                  <div className='inside'>{appointment.date_appointment}</div>
                   <div className='buttondelete'><button className='deleteButton' onClick={()=> {deleteAppointment(appointment._id)}}>X</button></div>
                 </div>
             )}
