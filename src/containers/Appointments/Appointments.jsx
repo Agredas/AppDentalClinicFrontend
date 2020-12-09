@@ -18,8 +18,6 @@ const Appointments = () =>{
     })
   },[])
 
-  
-
   const deleteAppointment = async (id) =>{
     const options = { headers: { Authorization: `Bearer ${token}` }};
     await axios.delete(process.env.REACT_APP_BASE_URL + '/appointment/cancel/' + id, options)
