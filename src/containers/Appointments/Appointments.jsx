@@ -12,7 +12,7 @@ const Appointments = () =>{
     axios.get(process.env.REACT_APP_BASE_URL + '/appointment/show', options)
     .then((res) =>{
       console.log(res.data)
-      setAppointments(res.data.appointment);
+      setAppointments(res.data);
     }).catch((error) =>{
       console.log(error);
     })
