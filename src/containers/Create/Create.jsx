@@ -38,8 +38,8 @@ const Create = () =>{
       </div>
     <form className="create-form" onSubmit={handleSubmit}>
     <Input type="title" name="title" required placeholder="Write title" />
-    <Input type="descriptoin" name="description" required placeholder="Write descritpion" />
-    <Input type="date" name="date" required placeholder="Write date" />
+    <Input type="descriptoin" name="description" required placeholder="Write description" />
+    <Input type="date" name="date_appointment" required placeholder="Write date" />
 
     <button  type="primary" className='noStyle' htmlType="submit">Create</button>
 
