@@ -5,9 +5,8 @@
 AppDentalClinic is a responsive application for a Dental Clinic where clients can register and make appointments, cancel them or view them all, you can also be an administrator and see all the appointments of all the users.
 
 - Links: 
-  - Repository: [GitHub](https://github.com/Agredas/AppDentalClinicFrontend)
-  - Deployed in: [Heroku](https://app-dental-clinic-frontend.herokuapp.com/)
-  - Backend Repository: [Github](https://github.com/Agredas/AppDentalClinicBackend)
+  - Deployed in: [Heroku](https://front-dental-clinic-laravel.herokuapp.com/)
+  - Backend Repository: [Github](https://github.com/Agredas/BackendDentalClinic_Laravel)
 
 🔧Technologies🔨
 
